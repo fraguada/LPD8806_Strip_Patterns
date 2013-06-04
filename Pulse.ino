@@ -1,12 +1,20 @@
 //pulse
-void pulse(uint8_t r, uint8_t g, uint8_t b, uint8_t steps, uint8_t wait)
+void pulse(uint32_t c1, uint8_t steps, uint8_t wait)
 {
   int t = 0;
+  boolean cycle = false;
   float lev = 0;
   boolean dir = true;
   byte r2, g2, b2;
+  
+  byte  r, g, b;
 
-  while(1){
+  // Need to decompose color into its r, g, b elements
+  g = (c1 >> 16) & 0x7f;
+  r = (c1 >>  8) & 0x7f;
+  b =  c1        & 0x7f; 
+
+  while(!cycle){
 
     if(t < steps && dir)
     {
@@ -23,6 +31,7 @@ void pulse(uint8_t r, uint8_t g, uint8_t b, uint8_t steps, uint8_t wait)
       } 
       else {
         dir = true;
+        cycle = true;
       }
     }
 

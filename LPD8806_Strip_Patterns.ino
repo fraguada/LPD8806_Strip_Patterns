@@ -46,12 +46,14 @@ void loop() {
   // ColorPhasing(10);
   // colorWipe(strip.Color(255,0,255),100);
   // colorChase(strip.Color(255,0,255),100);
-  // scanner(255,0,255,100);
+   //scanner(strip.Color(127,0,127),100);
   // dither(strip.Color(255,0,255),100);
   //  wave(strip.Color(255,0,255),2,100);
   //  colorBash(strip.Color(255,0,255));
-  //pulse(127,127,127,100, 10); //r from 0 to 127, g from 0 to 127, b from 0 to 127, steps, wait
- blend(strip.Color(127,0,127),strip.Color(0,127,127),100,10);
+//pulse(strip.Color(127,0,127),100, 10); //r from 0 to 127, g from 0 to 127, b from 0 to 127, steps, wait
+ //blend(strip.Color(127,0,127),strip.Color(0,127,127),100,10);
+// colorChase(strip.Color(127,0,127),strip.Color(0,127,127),100);
+ scanner(strip.Color(127,0,127),strip.Color(0,127,127),100);
 }
 
 
